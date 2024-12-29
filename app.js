@@ -8,9 +8,14 @@ import dotenv from 'dotenv';
 import read from './Read.js';
 import deleteAll from './DeleteAll.js';
 import signup from './Signup.js';
+import { connectDb } from './dataBaseConnection/db.js';
+import {usermodel} from './dbmodel/userdetails.js';
 
 //database connection
 export const connection = db();
+const sequelize = connectDb();
+//model
+usermodel()
 
 const app = express();
 
